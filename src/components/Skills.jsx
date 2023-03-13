@@ -1,7 +1,5 @@
 import React from "react";
 
-import flask from "../assets/images/flask-icon.png";
-
 const Skills = () => {
   const skills = [
     {
