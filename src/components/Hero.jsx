@@ -1,7 +1,21 @@
 import React from "react";
 import hero from "../assets/images/hero.jpeg";
+import { Link } from "react-router-dom";
 const Hero = () => {
-  const social_media = ["logo-instagram", "logo-facebook", "logo-linkedin"];
+  const social_media = [
+    {
+      image: "logo-instagram",
+      link: "#instagram",
+    },
+    {
+      image: "logo-github",
+      link: "https://github.com/anoopvenkatesh23",
+    },
+    {
+      image: "logo-linkedin",
+      link: "https://www.linkedin.com/in/anoop-venkatesh/",
+    },
+  ];
   return (
     <section
       id="home"
@@ -25,12 +39,14 @@ const Hero = () => {
           <button className="btn-primary mt-8">Contact Me</button>
           <div className="mt-8 text-3xl flex items-center md:justify-start justify-center gap-5">
             {social_media?.map((icon) => (
-              <div
-                key={icon}
-                className="text-gray-600 hover:text-white cursor-pointer "
+              <a
+                key={icon.image}
+                className="text-gray-600 hover:text-white cursor-pointer"
+                href={icon.link}
+                target="_blank"
               >
-                <ion-icon name={icon}></ion-icon>
-              </div>
+                <ion-icon name={icon.image}></ion-icon>
+              </a>
             ))}
           </div>
         </div>
